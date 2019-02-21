@@ -15,6 +15,8 @@ prog_name="${1}"
 cfile="${1}".c
 test_in="tests/${1}.in"
 test_out="tests/${1}.out"
+diff_opts="--ignore-space-change --ignore-blank-lines"
+#--color --ignore-trailing-space
 
 if [ ! -f "${cfile}" ]; then
     echo "ERROR: file ${cfile} not found!"
@@ -45,8 +47,7 @@ if [ ! -f "${student_out}" ]; then
     echo "ERROR: The output of the exercise was not created (file ${student_out})!"
     exit 100
 fi
-
-if diff --color --ignore-space-change --ignore-blank-lines --ignore-trailing-space ${student_out} ${test_out}; then
+if diff ${diff_opts} ${student_out} ${test_out}; then
     echo "Test PASSED!"
 else
     echo "Test FAILURE!"
