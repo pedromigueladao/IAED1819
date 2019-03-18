@@ -7,7 +7,7 @@ O resultado deve ser impresso com a disciplina mais popular na primeira linha e 
 Caso existam duas disciplinas/alunos com o mesmo score, deverá ser impresso o que tiver menor identificador.
 
 *Sugestão:* Guardar os valores numa matriz `int  valores[ALUNOS][DISCIPLINAS]` e implementar funções
-`long score_disciplina(int disciplina, int valores[ALUNOS][DISCIPLINAS])` e `long score_disciplina(int disciplina, int valores[ALUNOS][DISCIPLINAS])`.
+`long score_disciplina(int disciplina, int valores[ALUNOS][DISCIPLINAS])` e `long score_aluno(int aluno, int valores[ALUNOS][DISCIPLINAS])`.
 
 ## ex02 (Números complexos - estruturas)
 Implemente um programa que leia dois números complexos e imprima a soma deles. Os números devem ser lidos no formato x+yi (ex: 5+3i).
