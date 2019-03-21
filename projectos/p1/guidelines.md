@@ -1,8 +1,10 @@
-## Compilação 
+# Guidelines
+
+## Compilação
 
 * O programa deve ser compilado usando o comando `gcc -Wall -Wextra -ansi -pedantic`. O compilador não deve apresentar erros ou avisos ("warnings"). Recomenda-se usar a versão 7, ou superior, do compilador (consulte `gcc --version`).
 
-## Formatação 
+## Formatação
 
 * A formatação do código deve ser **consistente**. Recomenda-se a utilização de um editor de texto com indentação automática.
 * Abrir cada chaveta na mesma linha do cabeçalho da função **ou** na linha a seguir, alinhada com o cabeçalho.
@@ -19,7 +21,7 @@ Por exemplo, não é necessário comentar sobre uma variável que representa um 
 ## Organização do código
 
 * Não deve haver repetição de código (código repetido deveria ser colocado numa função).
-* Evite funções demasiado grandes (e pouco legíveis). 
+* Evite funções demasiado grandes (e pouco legíveis).
 * Recomenda-se usar a ferramenta lizard (http://www.lizard.ws/) para calcular a complexidade ciclométrica. A ferramenta não deve emitir avisos.
 
 ## Constantes
