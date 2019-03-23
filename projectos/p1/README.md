@@ -2,6 +2,13 @@
 
 ## Data de entrega: 04 de Abril de 2019 (17h59m)
 
+## LOG alterações
+
+- (22Mar2019) Corrigidos os outputs dos ficheiros de teste. Datas foram normalizadas para a forma _ddmmaaaa_ e tempos para _hhmm_.
+- (22Mar2019) Adicionada nota referente ao máximo de eventos por sala.
+- (22Mar2019) Adicionado o comando `x`.
+- (22Mar2019) Clarifica as mensagens de erros, e erros sobrepostos.
+
 ## 1. Introdução
 
 O objectivo deste projeto é o desenvolvimento, em linguagem C, de um sistema de reserva de salas. A interacção com o programa deverá ocorrer através de um conjunto de linhas compostas por uma letra (comando) e um número de argumentos dependente do comando a executar. Os possíveis comandos são listados na Tabela seguinte e indicam as operações a executar.
@@ -17,6 +24,7 @@ O objectivo deste projeto é o desenvolvimento, em linguagem C, de um sistema de
 | __m__ | muda a sala de um evento |
 | __A__ | adiciona um participante a um evento |
 | __R__ | remove um participante de um evento |
+| __x__ | termina o programa |
 
 ## 2. Especificação do problema
 
@@ -40,7 +48,9 @@ O identificador de eventos é a sua _descrição_ que poderá assumir ser única
 
 Pode assumir que cada evento termina no dia em que começa, ie, não passa para o dia seguinte, e que a sua duração será em minutos (entre 1 e 1440=24horas). Se necessário pode assumir que nenhum evento foi agendado antes de `01012019`.
 
-Pode assumir que existem no máximo 10 salas, numeradas de 1 a 10, e que nunca serão agendados mais que 100 eventos por sala.
+Pode assumir que existem no máximo 10 salas, numeradas de 1 a 10, e que nunca serão agendados mais que 100 eventos por sala ao mesmo tempo.
+
+_Nota (22Mar2019): Não viola a hipótese acima a criação de 100 eventos para uma sala, seguida da remoção de um evento, seguida da criação de outro._ 
 
 Pode assumir que todo o input fornecido respeitará os tipos indicados. Por exemplo, nunca será dada uma sala que seja uma string, um valor negativo, zero, nem um valor superior a 10.
 
@@ -82,27 +92,27 @@ Os comandos disponíveis são descritos de seguida. Cada comando indica uma dete
   * Formato de entrada: `i descricao:novo_inicio`
   * Formato de saída: NADA (excepto erro)
   * Erros:
-    * Os mesmos que os erros para o comando `a`
     * `Evento <descricao> inexistente.` no caso de o evento não existir
+    * Os mesmos que os erros para o comando `a` no caso de o evento existir
 * __t__ - altera a duração de um evento
   * Formato de entrada: `t descricao:nova_duracao`
   * Formato de saída: NADA (excepto erro)
   * Erros:
-    * Os mesmos que os erros para o comando `a`
     * `Evento <descricao> inexistente.` no caso de o evento não existir
+    * Os mesmos que os erros para o comando `a` no caso de o evento existir
 * __m__ - muda a sala de um evento
   * Formato de entrada: `m descricao:nova_sala`
   * Formato de saída: NADA (excepto erro)
   * Erros:
-    * `Impossivel agendar evento <descricao>. Sala<sala> ocupada.` no caso de a sala estar ocupada no período em causa
     * `Evento <descricao> inexistente.` no caso de o evento não existir
+    * `Impossivel agendar evento <descricao>. Sala<sala> ocupada.` no caso de a sala estar ocupada no período em causa
 * __A__ - adiciona um participante a um evento já existente. Se o participante já participar no evento, então não deverá fazer nenhuma acção
   * Formato de entrada: `A descricao:participante`
   * Formato de saída: NADA (excepto erro)
   * Erros:
     * `Evento <descricao> inexistente.` no caso de o evento não existir
     * `Impossivel adicionar participante. Evento <descricao> ja tem 3 participantes.` no caso de o evento já ter o máximo de 3 participantes
-    * `Impossivel adicionar participante. Participante <participante> tem um evento sobreposto.` no caso de o participante já ter um evento sobreposto
+    * `Impossivel adicionar participante. Participante <participante> tem um evento sobreposto.` no caso de _ser possível adicionar participantes_ mas o participante já ter um evento sobreposto
 * __R__ - remove um participante de um evento já existente. Se o participante não participar no evento, então não deverá fazer nenhuma acção
   * Formato de entrada: `R descricao:participante`
   * Formato de saída: NADA (excepto erro)
@@ -196,5 +206,3 @@ Algumas guidelines sobre este tópico podem ser encontradas [aqui](guidelines.md
 * Note-se que o facto de um projecto passar com sucesso o conjunto de testes disponibilizado na página da disciplina não implica que esse projecto esteja totalmente correcto. Apenas indica que passou alguns testes com sucesso, mas este conjunto de testes não é exaustivo. É da responsabilidade dos alunos garantir que o código produzido está correcto.
 
 * Em caso algum será disponibilizado qualquer tipo de informação sobre os casos de teste utilizados pelo sistema de avaliação automática. A totalidade de ficheiros de teste usados na avaliação do projecto serão disponibilizados na página da disciplina após a data de entrega.
-
-## LOG alterações
