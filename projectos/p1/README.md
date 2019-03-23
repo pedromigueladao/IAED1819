@@ -112,7 +112,7 @@ Os comandos disponíveis são descritos de seguida. Cada comando indica uma dete
   * Erros:
     * `Evento <descricao> inexistente.` no caso de o evento não existir
     * `Impossivel adicionar participante. Evento <descricao> ja tem 3 participantes.` no caso de o evento já ter o máximo de 3 participantes
-    * `Impossivel adicionar participante. Participante <participante> tem um evento sobreposto.` no caso de _ser possível adicionar participantes_ mas o participante já ter um evento sobreposto
+    * `Impossivel adicionar participante. Participante <participante> tem um evento sobreposto.` no caso de _ser possível adicionar participantes_ mas o participante já tiver um evento sobreposto
 * __R__ - remove um participante de um evento já existente. Se o participante não participar no evento, então não deverá fazer nenhuma acção
   * Formato de entrada: `R descricao:participante`
   * Formato de saída: NADA (excepto erro)
