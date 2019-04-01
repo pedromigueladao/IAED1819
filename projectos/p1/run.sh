@@ -39,8 +39,8 @@ do
 
   	diff -q "${arg%.*}".out "${arg%.*}".out.${prog_name}
     rv_diff=$?
-
-	rm -f "${arg%.*}".out.${prog_name}
+	
+    rm -f "${arg%.*}".out.${prog_name}
 
     if [ ${rv_diff} == 0 ]; then
         echo -e "${GREEN}[++] Test ${arg%.*}.in PASSED!${NC}"
@@ -52,13 +52,18 @@ done
 
 rm -f ${prog_name}
 
-echo -e ""
-echo -e "FAILURES: $failures"
+if [ ${failures} -gt 0 ]; then
+    echo -e ""
+    echo -e "${RED}FAILURES: $failures${NC}"
+else
+    echo -e ""
+    echo -e "${GREEN}FAILURES: $failures${NC}"
+fi
+
 if [ ${failures} == 0 ]; then
     echo -e "${GREEN}************************************"
     echo -e "* All tests passed! Great success! *"
     echo -e "************************************${NC}"
-
 fi
 
 if [ -s ${prog_name}.warnings ]; then
