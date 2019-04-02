@@ -148,7 +148,7 @@ Posteriormente poderá comparar o seu output (`*.myout`) com o output previsto (
 
 ### 7.1. Testes Auxiliares
 
-Para testar o seu programa poderá executar os passos indicados acima ou usar os scripts `run.sh` e `runall.sh` distribuídos nesta pasta. Para isso __deverão ter a vossa solução nesta pasta e
+Para testar o seu programa poderá executar os passos indicados acima ou usar os scripts `run.sh` e `runall.sh` distribuídos nesta pasta. Para isso __deverão ter a vossa solução nesta pasta__ e
 
 1. Se quiserem executar apenas o `test.in` da pasta `pasta` deverão executar
 
@@ -163,6 +163,18 @@ Para testar o seu programa poderá executar os passos indicados acima ou usar os
         $ ./runall.sh <vosso_ficheiro_c> pasta
 
 Estes scripts compilam o ficheiro indicado e comparam o resultado obtido com o resultado esperado. Se apenas indicar o tempo de execução é porque o comando `diff` não encontrou nenhuma diferença. Caso indique  mais informação, então é porque o resultado obtido e o resultado esperado diferem. Para obter a informação detalhada das diferenças poderá remover a opção `–q` da linha 13 do ficheiro `run.sh`.
+
+#### 7.1.1 Projecto dividido em múltiplos ficheiros
+
+Para testar implementações que usam vários ficheiros `.c`, e.g. `p1.c` e `p2.c`, podem usar o script `test.sh`. Para executarem todos os testes de uma `pasta` deverão executar
+
+        $ ./test.sh pasta p1.c p2.c
+
+ou
+
+        $ ./test.sh pasta *.c
+
+para incluir todos os ficheiros `.c`. Notem a __inversão dos argumentos__ face aos scripts `run.sh` e `runall.sh`.
 
 ## 8. Entrega do Projecto
 
