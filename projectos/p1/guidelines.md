@@ -63,3 +63,25 @@ int main() {
     return 0;
 }
 ```
+
+## Valgrind
+
+É aconselhável analisar o projecto usando a ferramenta Valgrind. Para instalar no Ubuntu:
+
+    $ sudo apt install valgrind
+
+Existe um script `test-vg.sh` que corre o projecto com Valgrind para os testes
+dados.  Para analisar individualmente um teste que está a falhar efetuem os
+seguintes passos. Primeiro, compilar com a flag `-g`, e.g.  `gcc -g -Wall
+-Wextra -ansi -pedantic proj1.c`. Segundo, executar o projecto compilado com o Valgrind
+usando o teste como standard input, e.g.
+
+    $ valgrind ./a.out <testes_publicos/teste27.in
+
+Podem também ignorar o output do projecto da maneira seguinte:
+
+    $ valgrind ./a.out <testes_publicos/teste27.in >/dev/null
+
+*Nota:* O valgrind neste momento não tem suporte para Macs. As alternativas são: máquina virtual com ubuntu, máquinas de laboratórios, pedir ajuda a um colega/amigo.
+
+
