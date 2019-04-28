@@ -2,7 +2,9 @@
 
 ## Compilação
 
-* O programa deve ser compilado usando o comando `gcc -Wall -Wextra -ansi -pedantic`. O compilador não deve apresentar erros ou avisos ("warnings"). Recomenda-se usar a versão 7, ou superior, do compilador (consulte `gcc --version`).
+* O programa deve ser compilado usando o comando `gcc -Wall -Wextra -ansi -pedantic`.
+* O compilador não deve apresentar erros ou avisos ("warnings").
+* Recomenda-se usar a versão 7, ou superior, do compilador (consulte `gcc --version`).
 
 ## Formatação
 
@@ -14,15 +16,15 @@ Fechar cada chaveta numa linha nova, também alinhada com o cabeçalho. O mesmo 
 
 * O código deve que ser adequadamente comentado. Comentários em excesso devem ser evitados.
 Por exemplo, não é necessário comentar sobre uma variável que representa um contador de um ciclo.
-* Cada ficheiro deve ter um comentário, no início, com uma discrição sucinta e o(s) nome(s) do(s) autor(es).
-* Cada função deve ter um comentário, antes do cabeçalho, com uma discrição sucinta.
-* Cada variável global e/ou estática deve ter um comentário com uma discrição sucinta. O comentário pode ser colocado na mesma linha da declaração da variável, ou na linha antes.
+* Cada ficheiro deve ter um comentário, no início, com uma descrição sucinta e o(s) nome(s) do(s) autor(es).
+* Cada função deve ter um comentário, antes do cabeçalho, com uma descrição sucinta.
+* Cada variável global e/ou estática deve ter um comentário com uma descrição sucinta. O comentário pode ser colocado na mesma linha da declaração da variável, ou na linha antes.
 
 ## Organização do código
 
 * Não deve haver repetição de código (código repetido deveria ser colocado numa função).
 * Evite funções demasiado grandes (e pouco legíveis).
-* Recomenda-se usar a ferramenta lizard (http://www.lizard.ws/) para calcular a complexidade ciclométrica. A ferramenta não deve emitir avisos.
+* Recomenda-se usar a ferramenta [lizard](http://www.lizard.ws/) para calcular a complexidade ciclométrica. A ferramenta não deve emitir avisos.
 
 ## Constantes
 
@@ -30,7 +32,7 @@ Por exemplo, não é necessário comentar sobre uma variável que representa um 
 
 ## Exemplo
 
-```
+```C
 /*
  * File:  ex.c
  * Author:  mikolas
@@ -70,18 +72,16 @@ int main() {
 
     $ sudo apt install valgrind
 
-Existe um script `test-vg.sh` que corre o projecto com Valgrind para os testes
-dados.  Para analisar individualmente um teste que está a falhar efetuem os
-seguintes passos. Primeiro, compilar com a flag `-g`, e.g.  `gcc -g -Wall
--Wextra -ansi -pedantic proj1.c`. Segundo, executar o projecto compilado com o Valgrind
-usando o teste como standard input, e.g.
+Existe um script `test-vg.sh` que corre o projecto com Valgrind para os testes dados.  Para analisar individualmente um teste que está a falhar efetuem os seguintes passos.
 
-    $ valgrind ./a.out <testes_publicos/teste27.in
+1. Compilar com a flag `-g`, e.g.  `gcc -g -Wall
+-Wextra -ansi -pedantic proj1.c`.
+2. executar o projecto compilado com o Valgrind usando o teste como standard input, e.g.
 
-Podem também ignorar o output do projecto da maneira seguinte:
+        $ valgrind ./a.out <testes_publicos/teste27.in
 
-    $ valgrind ./a.out <testes_publicos/teste27.in >/dev/null
+Podem também ignorar o output do projecto da seguinte forma:
 
-*Nota:* O valgrind neste momento não tem suporte para Macs. As alternativas são: máquina virtual com ubuntu, máquinas de laboratórios, pedir ajuda a um colega/amigo.
+        $ valgrind ./a.out <testes_publicos/teste27.in >/dev/null
 
-
+*Nota:* O valgrind neste momento não tem suporte para Macs. As alternativas são utilizar uma máquina virtual com ubuntu, os computadores dos laboratórios, ou pedir ajuda a um colega/amigo.

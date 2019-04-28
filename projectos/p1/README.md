@@ -4,10 +4,10 @@
 
 ## LOG alterações
 
-- (22Mar2019) Corrigidos os outputs dos ficheiros de teste. Datas foram normalizadas para a forma _ddmmaaaa_ e tempos para _hhmm_.
-- (22Mar2019) Adicionada nota referente ao máximo de eventos por sala.
-- (22Mar2019) Adicionado o comando `x`.
-- (22Mar2019) Clarifica as mensagens de erros, e erros sobrepostos.
+* (22Mar2019) Corrigidos os outputs dos ficheiros de teste. Datas foram normalizadas para a forma _ddmmaaaa_ e tempos para _hhmm_.
+* (22Mar2019) Adicionada nota referente ao máximo de eventos por sala.
+* (22Mar2019) Adicionado o comando `x`.
+* (22Mar2019) Clarifica as mensagens de erros, e erros sobrepostos.
 
 ## 1. Introdução
 
@@ -50,7 +50,7 @@ Pode assumir que cada evento termina no dia em que começa, ie, não passa para 
 
 Pode assumir que existem no máximo 10 salas, numeradas de 1 a 10, e que nunca serão agendados mais que 100 eventos por sala ao mesmo tempo.
 
-_Nota (22Mar2019): Não viola a hipótese acima a criação de 100 eventos para uma sala, seguida da remoção de um evento, seguida da criação de outro._ 
+_Nota (22Mar2019): Não viola a hipótese acima a criação de 100 eventos para uma sala, seguida da remoção de um evento, seguida da criação de outro._
 
 Pode assumir que todo o input fornecido respeitará os tipos indicados. Por exemplo, nunca será dada uma sala que seja uma string, um valor negativo, zero, nem um valor superior a 10.
 
@@ -218,3 +218,26 @@ Algumas guidelines sobre este tópico podem ser encontradas [aqui](guidelines.md
 * Note-se que o facto de um projecto passar com sucesso o conjunto de testes disponibilizado na página da disciplina não implica que esse projecto esteja totalmente correcto. Apenas indica que passou alguns testes com sucesso, mas este conjunto de testes não é exaustivo. É da responsabilidade dos alunos garantir que o código produzido está correcto.
 
 * Em caso algum será disponibilizado qualquer tipo de informação sobre os casos de teste utilizados pelo sistema de avaliação automática. A totalidade de ficheiros de teste usados na avaliação do projecto serão disponibilizados na página da disciplina após a data de entrega.
+
+## 10. Revisão do Projecto
+
+### Data: entre as 00h00 do dia 05Maio2019 e as 16h59m do dia 06Maio2019
+
+Serão aceites __pequenas correcções__ ao projecto que cumpram as seguintes regras:
+
+* um máximo de 10 linhas alteradas (ou adicionadas);
+* um número ilimitado de linhas removidas;
+* alterações de formatação de output ilimitadas (`printf`s e similares);
+
+As revisões deverão ser submetidas no sistema Mooshak no período __entre as 00h00 do dia 05Maio2019, e as 16h59m do dia 06Maio2019. Após uma submissão, a próxima só poderá ser feita passadas 12 hrs.__
+
+O corpo docente reserva-se no direito de não aceitar as revisões que, apesar de cumprirem as regras acima, contrariem o espírito de *pequenas correcções*. Exemplos que violam o espírito de *pequenas correcções* são o desenvolvimento de funcionalidades que não tenham sido feitas na submissão original e/ou alterações significativas que sejam codificadas numa só linha.
+
+A pontuação obtida através destas correcções será uma percentagem do valor que seria obtido aquando da submissão original e poderá ser vista [aqui](grelha-revisao.pdf).
+
+Nos próximos dias adicionaremos abaixo alguns testes simples que facilitem o despiste de erros comuns que detectámos.
+Sugerimos aos alunos que testem as suas correcções localmente antes de as submeterem no Mooshak.
+
+### Testes Novos
+
+@ToDo
