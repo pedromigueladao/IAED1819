@@ -1,0 +1,5 @@
+N1 n1@foo.bar 1
+N2 n2@foo.bar 2
+N3 n3@foo.bar 3
+foo.bar:3
+foo.bar:0
