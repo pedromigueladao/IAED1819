@@ -235,9 +235,30 @@ O corpo docente reserva-se no direito de não aceitar as revisões que, apesar d
 
 A pontuação obtida através destas correcções será uma percentagem do valor que seria obtido aquando da submissão original e poderá ser vista [aqui](grelha-revisao.pdf).
 
-Nos próximos dias adicionaremos abaixo alguns testes simples que facilitem o despiste de erros comuns que detectámos.
-Sugerimos aos alunos que testem as suas correcções localmente antes de as submeterem no Mooshak.
+Abaixo podem encontrar alguns testes simples que facilitam o despiste de erros comuns que detectámos.
+Sugerimos que testem as vossas correcções localmente antes de as submeterem no Mooshak.
 
-### Testes Novos
+### Testes Revisão
 
-@ToDo
+Na pasta `testes_revisao` podem encontrar alguns testes para despistar erros comuns:
+
+* `teste00_max_tamanhos.in` - verifica que os tamanhos máximos das strings
+* `teste01_participantes.in` - Cria eventos com 1, 2, e 3 participantes
+* `teste02_outputs.in` - Testa a correcta formatação dos outputs (hora e dia)
+* `teste03_adiciona_ordenado.in` - Adiciona eventos ordenados numa mesma sala (no mesmo dia). Comando `s`.
+* `teste04_adiciona_invertido.in` - Adiciona eventos por ordem inversa numa mesma sala (no mesmo dia). Comando `s`.
+* `teste05_adiciona_invertido_dias_diferentes.in` - Adiciona eventos por ordem inversa numa mesma sala (em dias diferentes). Comando `s`.
+* `teste06_adiciona_ordenado_salas_diferentes.in` - Adiciona eventos ordenados em salas diferentes (no mesmo dia). Comando `l`.
+* `teste07_adiciona_invertido_diferentes_salas.in` - Adiciona eventos desordenadamente em dias e salas diferentes. Comando `l`.
+
+Sugerimos que sigam os seguintes passos:
+
+1. Corrijam o código de forma incremental.
+2. Garantam que o vosso código compila sem erros. Se necessário removam funcionalidades comentando código.
+3. Garantam que estão a ler o input e a escrever o output correctamente, em particular garantam que as strings não ficam com espaços extra, `\n` no final, que a formatação está correcta, etc. (testes revisao 00-02)
+4. Garantam que o comando `a` funciona correctamente supondo que não há eventos sobrepostos nem outros erros (testes revisao 00-03, e testes públicos 00-01)
+5. Garantam que o comando `s` funciona correctamente (testes revisao 03-05, e testes públicos 00-01)
+6. Garantam que o comando `l` funciona correctamente (testes revisao 06-07, e testes públicos 23)
+7. Garantam que o comando `a` funciona correctamente nos casos de erro (testes pulicos 02-04)
+8. Garantam que cada um dos outros comandos funciona isoladamente `r` (testes públicos 05-06), `i` (testes públicos 07-11), `t` (testes públicos 12-15), `m` (testes públicos 16-18), `A` (testes públicos  19-20), `R` (testes públicos 21-22)
+9. Testem o programa em toda a sua generalidade (testes públicos 24-43)

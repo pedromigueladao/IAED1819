@@ -1,0 +1,11 @@
+a N1 n1@foo.bar 1
+a N2 n2@foo.bar 2
+a N3 n3@foo.bar 3
+l
+c foo.bar
+r N1
+r N2
+r N3
+c foo.bar
+l
+x
