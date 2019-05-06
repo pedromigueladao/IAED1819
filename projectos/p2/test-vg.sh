@@ -118,4 +118,4 @@ for test_in in `ls -rS ${test_dir}/*.in`; do
     rm -f ${student_out} ${vg_out}
 done
 rm -f ${student_out} ${vg_out}
-exit rv
+exit $rv
