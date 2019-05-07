@@ -43,4 +43,29 @@ e deverá ser manipulada pelas seguintes funções:
     list* mk_list(); /* cria nova lista vazia */
     void free_list(list* l); /* liberta toda a memoria associada a lista */
     void add_last(list* l, char c); /* adiciona o char c como o ultimo elemento da lista */
+    void remove(list * l, char c); /* remove a primeira ocorrência de c na lista */
     int is_paly(const list * ls); /* calcula se a dada lista e um palindromo */
+
+## ex03
+
+Partindo da implementação da lista ligada no Exercício 3 do Lab 9, implemente as seguintes
+funções para gerir uma tabela de dispersão com encadeamento externo:
+
+    void ht_init(node **tab, unsigned long int m); /* inicializa a tabela */
+    void ht_reset(node **tab, unsigned long int m); /* apaga todos os elementos da tabela */
+    void ht_add(node **tab, unsigned long int m, char *s); /* adiciona a string s à tabela */
+    void ht_delete(node **tab, unsigned long int m, char *s); /* apaga a string s da tabela */
+    int ht_exists(node **tab, unsigned long int m, char *s); /* retorna diferente de 0 se s estiver na tabela*/
+
+Considere a função de dispersão:
+
+    static unsigned long djb2(char * str) {
+        unsigned long hash = 5381;
+        int c;
+        while ((c = *str++))
+            hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+        return hash;
+    }
+
+Note que esta função retorna um `unsigned long` e não uma posição na tabela.
+
