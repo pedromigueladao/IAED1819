@@ -26,7 +26,10 @@ else
     echo "Program successfully compiled..."
 fi
 
-time_cmd="time"
+if  ( which `cut <<<time -f1 -d\ ` >/dev/null 2>&1 ) ; then
+    time_cmd="time"
+fi
+
 if  [ -f /usr/bin/time ] ; then
     if /usr/bin/time -f "%e%M" echo 2>/dev/null >/dev/null; then
         time_cmd='/usr/bin/time'
