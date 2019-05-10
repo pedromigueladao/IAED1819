@@ -26,13 +26,21 @@ else
     echo "Program successfully compiled..."
 fi
 
+if  [ -f /usr/bin/time ] ; then
+    time_cmd='/usr/bin/time'
+    time_args=(-f "Resources: real:%es mem:%MKB")
+else
+    time_cmd="time"
+    time_args=""
+fi
+
 okay=1
 for test_in in `ls -rS ${test_dir}/*.in`; do
     echo "Test:" "${test_in}"
     test_out="${test_in%.in}.out"
     stamp="${RANDOM}${RANDOM}"
     student_out=/tmp/in_${stamp}
-    ( time ./${prog_name} <${test_in} >${student_out} ) 2>&1 | tr '\n' '\t'
+    ( ${time_cmd} "${time_args[@]}" ./${prog_name} <${test_in} >${student_out} )
     rv_student=$?
 
     if [ ! -f "${student_out}" ]; then
