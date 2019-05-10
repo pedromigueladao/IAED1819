@@ -11,7 +11,7 @@ if [ $# -lt 1 ] ; then
     exit 1
 fi
 
-for d in tests-basic tests-p tests-e tests-r tests-a_r tests-c tests-mix ; do
+for d in tests-basic tests-p tests-e tests-r tests-a_r tests-c tests-mix tests-big ; do
     if ./test.sh ${d} $*; then
         echo "=== directory completed: ${d} ==="
     else
