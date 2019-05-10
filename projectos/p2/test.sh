@@ -26,12 +26,12 @@ else
     echo "Program successfully compiled..."
 fi
 
+time_cmd="time"
 if  [ -f /usr/bin/time ] ; then
-    time_cmd='/usr/bin/time'
-    time_args=(-f "Resources: real:%es mem:%MKB")
-else
-    time_cmd="time"
-    time_args=""
+    if /usr/bin/time -f "%e%M" echo 2>/dev/null >/dev/null; then
+        time_cmd='/usr/bin/time'
+        time_args=(-f "Resources: real:%es mem:%MKB")
+    fi
 fi
 
 okay=1
