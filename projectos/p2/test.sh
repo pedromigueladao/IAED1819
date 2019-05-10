@@ -26,23 +26,26 @@ else
     echo "Program successfully compiled..."
 fi
 
+okay=1
 for test_in in `ls -rS ${test_dir}/*.in`; do
     echo "Test:" "${test_in}"
     test_out="${test_in%.in}.out"
     stamp="${RANDOM}${RANDOM}"
     student_out=/tmp/in_${stamp}
-    ./${prog_name} <${test_in} >${student_out}
+    ( time ./${prog_name} <${test_in} >${student_out} ) 2>&1 | tr '\n' '\t'
     rv_student=$?
 
     if [ ! -f "${student_out}" ]; then
         echo "ERROR: The output of the exercise was not created (file ${student_out})!"
-        exit 1
+        okay=0
+        break
     fi
 
     if [ ${rv_student} != 0 ]; then
         echo "ERROR: Program did not return 0!"
         rm -f ${student_out}
-        exit 1
+        okay=0
+        break
     else
         echo "Program successfully ran..."
     fi
@@ -55,8 +58,15 @@ for test_in in `ls -rS ${test_dir}/*.in`; do
         echo "Test ${test_in} PASSED!"
     else
         echo "Test ${test_in} FAILURE!"
-        exit 1
+        okay=0
+        break
     fi
 done
+if [ ${okay} == 1 ]; then
+    echo "+++++++++++++++++++"
+    echo "+All Tests PASSED!+"
+    echo "+++++++++++++++++++"
+fi
 
+rm -f ${student_out}
 rm -f ${prog_name}
